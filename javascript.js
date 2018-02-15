@@ -55,13 +55,15 @@ var hints = {
   bandmem: "--",
   albums: "--",
   songs: "--",
-  ayT: 1,
+  // how many seconds after the game start to display the hint
+  ayT: 1,  
   originT: 3,
-  infoT: 4,
+  infoT: 5,
   singerT: 7,
   bandmemT: 8,
-  albumsT: 9,
-  songsT: 11,
+  albumsT: 10,
+  songsT: 12,
+  //end hint timing
   initHints: function() {
     this.ay = "--";
     this.origin = "--";
@@ -253,7 +255,7 @@ var game = {
         if (this.isWinner(this.bandMask)) {
           this.winsCnt++;
           game.updateDisplay();
-          game.showDialog("You are a Winner", this.band);
+          game.showDialog("You are a WINNER", this.band);
           // game.initTimer();
           // game.initGame();
           // this.initGame();
