@@ -99,11 +99,19 @@ var hints = {
       case this.bandmemT:
         this.bandmem = bands[game.bandOffset].bandMembers;
         break;
-      case this.albumsT:
-        this.albums = bands[game.bandOffset].albums;
+      case this.albumsT: { 
+        this.albums = "";
+        for (i = 0; i < bands[game.bandOffset].albums.length; i++ )  {    
+        this.albums += "<li>" + bands[game.bandOffset].albums[i] + "</li>";
+        }
         break;
+    }
       case this.songsT:
-        this.songs = bands[game.bandOffset].songs;
+      this.songs = "";
+      for (i = 0; i < bands[game.bandOffset].songs.length; i++ )  {    
+      this.songs += "<li>" + bands[game.bandOffset].songs[i] + "</li>";
+      }
+        // this.songs = bands[game.bandOffset].songs;
         break;
       default:
     } // switch
@@ -116,6 +124,7 @@ var game = {
   band: "", // Name to guess
   bandMask: "", // Name to guess
   bandOffset: 0, //offset to band to guess
+  LastBandOffset: 0, //offset to band to guess
   guesses: "", // string of guessed chars.
   guessCnt: 0, // guess count remaining
   //guessCntStr: "", // guess count remaining
@@ -172,7 +181,10 @@ var game = {
     this.guessCnt = this.guessMax;
     // countHTML.textContent = this.guessCnt.toString();
     // randomly pick band
+    while ( this.bandOffset === this.LastBandOffset) {// dont pick the same band again
     this.bandOffset = Math.floor(Math.random() * bands.length);
+    }
+    this.LastBandOffset =  this.bandOffset; 
     //this.bandOffset++; // debugging data
     this.band = bands[this.bandOffset].Name;
     this.bandMask = this.createMask(this.band);
