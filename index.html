@@ -44,16 +44,20 @@
         <div class="card">
           <div class="card-body">
             <h2 class="card-title text-center rounded bg-white text-danger py-1 border border-5 border-danger">
-              <img class="card-img-top" src="./assets/images/runningMan.gif" alt="" style="width:50px">
-              <img class="card-img-top" src="./assets/images/runningMan.gif" alt="" style="width:50px">
               <!-- <img class="card-img-top" src="./assets/images/runningMan.gif" alt="" style="width:50px"> -->
               Classic Rock Hangman
 
-              <img class="card-img-top" src="./assets/images/runningMan.gif" alt="" style="width:50px">
-              <img class="card-img-top" src="./assets/images/runningMan.gif" alt="" style="width:50px">
               <!-- <img class="card-img-top" src="./assets/images/runningMan.gif" alt="" style="width:50px"> -->
               <p>
+                <img class="card-img-top" src="./assets/images/runningMan.gif" alt="" style="width:50px; 
+                  -webkit-transform: scaleX(-1);
+                  transform: scaleX(-1)">
+                <img class="card-img-top" src="./assets/images/runningMan.gif" alt="" style="width:50px; 
+                -webkit-transform: scaleX(-1);
+                transform: scaleX(-1)">
                 <small>- - by Gary Cender - -</small>
+                <img class="card-img-top" src="./assets/images/runningMan.gif" alt="" style="width:50px">
+                <img class="card-img-top" src="./assets/images/runningMan.gif" alt="" style="width:50px">
               </p>
               <!-- <footer class="blockquote-footer">Gary Cender  </footer> -->
             </h2>
@@ -66,7 +70,7 @@
             <h3 class="card-text">The band is:
               <nb <span class="text-danger" id="name">--- ----</span>
             </h3>
-            <!-- <button type="button" class="btn btn-danger btn-md mr-3" id="new-game-btn">New Game</button> -->
+            <button type="button" class="btn btn-success btn-md mr-3" id="new-game-btn">Start Game</button>
             <button class="btn btn-light btn-sm" onclick="playAudio()" type="button">Play Audio</button>
             <button class="btn btn-light btn-sm" onclick="pauseAudio()" type="button">Stop Audio</button>
           </div>
@@ -85,7 +89,7 @@
     <div class="row">
 
       <!-- Left panel -->
-      <div class="col-md-6">
+      <div class="col-md-4">
 
         <!-- <div class="column"></div> -->
         <!-- <div class="row"> -->
@@ -129,7 +133,7 @@
       <!-- Left panel -->
 
       <!-- Right panel -->
-      <div class="col-md-6">
+      <div class="col-md-8">
         <div class="card">
           <!-- <img class="card-img-top" src="holder.js/100x180/" alt=""> -->
           <div class="card-body">
@@ -145,17 +149,17 @@
               <li class="list-group-item" id="origin-row">Origin:
                 <span id="origin">--</span>
               </li>
+              <li class="list-group-item" id="origin-row">Info:
+                <span id="info">--</span>
+              </li>
               <li class="list-group-item" id="lead-singer-row">Lead Singer
                 <span id="lead-singer"> --</span>
               </li>
               <li class="list-group-item" id="band-members-row">Band members:
                 <span id="band-members">--</span>
               </li>
-              <li class="list-group-item" id="info-row">Info
-                <span id="info"> --</span>
-              </li>
               <li class="list-group-item" id="albums-row">Album names:
-                <span id="albumss"> --</span>
+                <span id="albums"> --</span>
               </li>
               <li class="list-group-item" id="songs-row">Song names:
                 <span id="songs"> --</span>
@@ -183,53 +187,34 @@
       </div>
     </div>
   </div>
-<!-- The Modal -->
-<div class="modal fade" id="myModal">
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
     <div class="modal-dialog">
       <div class="modal-content">
-  
+
         <!-- Modal Header -->
-        <div class="modal-header">
-          <h4 class="modal-title">You lost</h4>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="modal-header" id="modal-header">
+          <h2 class="modal-title" id="modal-title">Modal title</h2>
+          <button type="button" class="close" data-dismiss="modal" id="modal-btn-x">&times;</button>
         </div>
-  
+
         <!-- Modal body -->
         <div class="modal-body">
-            <p>The answer is:</p> 
-            <h4 id="name3">--</h4>
+          <p>The band name is:</p>
+          <h4 id="modal-body">Modal body</h4>
         </div>
-  
+
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" id="modal-btn">Next Game</button>
         </div>
-  
+
       </div>
     </div>
   </div>
+  <!-- End modal dialog -->
 
 
-  <div class="modal fade" id="myModalX">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">You lost</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <p>The answer is:</p> 
-            <h4 id="name3xxxxx">--</h4>
-        </div>
-        <div class="modal-footer">
-          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- </div> -->
 
